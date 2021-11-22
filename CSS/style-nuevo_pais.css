@@ -66,3 +66,41 @@ body {
     .btn-dark-mode:hover {
         opacity: 0.6;
     }
+
+
+
+.box{
+    margin-top: 3rem;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        color: var(--Light-Mode-Text);
+        border-radius: .35rem;
+        width: 270px;
+        height: 100%;
+    }
+        body.dark-mode .card{
+            color: var(--light-Mode-Text);
+            background-color: var(--Dark-Mode-Background);
+        } 
+    .card img {
+        border-top-left-radius: .35rem;
+        border-top-right-radius: .35rem;
+        width: 280px;
+        height: 210px;
+    }
+    
+    .card-content h3 {
+        margin-bottom: 2rem;
+    }
+    
+    #lang-content{
+        
+    }
