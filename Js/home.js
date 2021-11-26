@@ -1,5 +1,6 @@
 const banderas = document.getElementById('flags')
 
+
 document.addEventListener("DOMContentLoaded", e => {
     fetchData()
 })
@@ -10,6 +11,7 @@ const fetchData = async () => {
         const data = await res.json()
         banderillas(data)
         formularioCliente(data)
+        filtros(data)
     } catch (error) {
         console.log(error)
     }
@@ -19,13 +21,12 @@ const fetchData = async () => {
 const banderillas = data => {
     let elements = '';
     data.forEach(item => { 
-        
-
 
         elements +=
 
 
-        `<article class="card">
+        `<a href="nuevo-pais.html?name=${item.name}" class="ov-btn-slide-left">
+        <article class="card">
              <img src="${item.flag}" alt="" class="img-fluid">
              <div class="card-content">
                  <h3>${item.name}</h3>
@@ -41,11 +42,12 @@ const banderillas = data => {
                      <b>Región: </b>
                      ${item.region}
                  </p>
-                 <p>
-                     <a href="nuevo-pais.html?name=${item.name}" class="ov-btn-slide-left">More info</a>
-                 </p>
+                 
+                    
+                 
              </div>
-        </article>`   
+        </article> 
+        </a>`   
              
       });
     banderas.innerHTML = elements
